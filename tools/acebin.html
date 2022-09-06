@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acebin Viewer</title>
+</head>
+<body>
+    <input type="text" id="paste-id" placeholder="Paste Id"/>
+    <button onclick="getPost()" style="display: block;">See</button>
+    <hr>
+    <h1 id="title"></h1>
+    <p id="lang"></p>
+    <textarea name="code" id="code"></textarea>
+    <script>
+        async function getPost() {
+            const postId = document.getElementById("paste-id").value
+
+            let formData = new FormData();
+            formData.append("id", postId);
+
+            const response = await fetch("https://acebin.herokuapp.com/info", {
+                method: "POST",
+                body: formData
+            })
+
+            const jsonResult = await response.json()
+            
+            if (response.ok) {
+                document.getElementById("title").innerText = jsonResult.title
+                document.getElementById("lang").innerText = jsonResult.lang
+                document.getElementById("code").value = jsonResult.data
+            } else {
+                alert(jsonResult.error)
+            }
+        }
+    </script>
+</body>
+</html>
