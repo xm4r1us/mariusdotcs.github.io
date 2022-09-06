@@ -24,7 +24,7 @@ function filterRepos(repos) {
 }
 
 async function addRepos() {
-    for (repo of await getRepo("5elenay")) {
+    for (repo of await getRepo("mariusdotcs")) {
         const repoDiv = document.createElement("div");
         repoDiv.className = "repo";
 
