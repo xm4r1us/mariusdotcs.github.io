@@ -1,16 +1,8 @@
 const technologiesElement = document.getElementById("technologies");
 
 const technologies = [
-    {
-        url: "https://elixir-lang.org/",
-        name: "Elixir",
-        icon: "elixir.svg",
-    },
-    {
-        url: "https://golang.org/",
-        name: "Golang",
-        icon: "golang.svg",
-    },
+
+
     {
         url: "https://www.javascript.com/",
         name: "JavaScript",
@@ -36,16 +28,7 @@ const technologies = [
         name: "MongoDB",
         icon: "mongodb.svg",
     },
-    {
-        url: "https://www.postgresql.org/",
-        name: "PostgreSQL",
-        icon: "postgres.svg",
-    },
-    {
-        url: "https://deno.land/",
-        name: "Deno",
-        icon: "deno.svg",
-    },
+    
     {
         url: "https://git-scm.com/",
         name: "Git",
