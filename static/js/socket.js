@@ -11,6 +11,7 @@ const elements = {
     avatar: document.getElementById("avatar"),
     status: document.getElementById("status"),
     card: document.getElementById("profile"),
+    stateX: document.getElementById("stateX")
 };
 
 const lanyard = new WebSocket("wss://api.lanyard.rest/socket");
@@ -52,7 +53,7 @@ lanyard.onmessage = ({ data }) => {
             elements.card.style.opacity = "1";
             elements.username.innerText = user.discord_user.username;
             elements.discriminator.innerText = `#${user.discord_user.discriminator}`;
-
+            
             elements.avatar.src = `https://cdn.discordapp.com/avatars/938401082105806909/${user.discord_user.avatar}.gif?size=128`;
             elements.status.style.background =
                 statusColors[user.discord_status];
