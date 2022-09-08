@@ -54,7 +54,7 @@ lanyard.onmessage = ({ data }) => {
             elements.username.innerText = user.discord_user.username;
             elements.discriminator.innerText = `#${user.discord_user.discriminator}`;
             if(user.activities){ var ela = "I'm playing "+user.activities[1].name+" now."}else{ var ela = ""}
-            elements.stateX.innerText = user.activities[0].state+"<br>"+ela;
+            elements.stateX.innerText = user.activities[0].state+"\n"+ela;
             elements.avatar.src = `https://cdn.discordapp.com/avatars/938401082105806909/${user.discord_user.avatar}.gif?size=128`;
             elements.status.style.background =
                 statusColors[user.discord_status];
