@@ -11,7 +11,8 @@ const elements = {
     avatar: document.getElementById("avatar"),
     status: document.getElementById("status"),
     card: document.getElementById("profile"),
-    stateX: document.getElementById("stateX")
+    stateX: document.getElementById("stateX"),
+    gameX: document.getElementById("gameX")
 };
 
 const lanyard = new WebSocket("wss://api.lanyard.rest/socket");
@@ -54,10 +55,10 @@ lanyard.onmessage = ({ data }) => {
             elements.username.innerText = user.discord_user.username;
             elements.discriminator.innerText = `#${user.discord_user.discriminator}`;
             try{
-if(user.activities){ var ela = "I'm in "+user.activities[1].name+" now."; var ela2 =""; }else{ var ela = ""}}
-catch(err){ var ela=""; var ela2 = "";}
-            elements.stateX.innerText = user.activities[0].state+"\n"+ela;
-            
+if(user.activities){ var ela = "I'm in "+user.activities[1].name+" now."; var ela2 =1; }else{ var ela = ""}}
+catch(err){ var ela=""; var ela2 = 0;}
+            elements.stateX.innerText = "My Discord Status: "user.activities[0].state;
+            if(ela){elements.gameX.innerText = ela;}
             elements.avatar.src = `https://cdn.discordapp.com/avatars/938401082105806909/${user.discord_user.avatar}.gif?size=128`;
             elements.status.style.background =
                 statusColors[user.discord_status];
