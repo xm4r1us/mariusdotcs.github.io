@@ -58,7 +58,7 @@ lanyard.onmessage = ({ data }) => {
 if(user.activities){ var ela = "I'm in "+user.activities[1].name+" now."; var ela2 =1; }else{ var ela = ""}}
 catch(err){ var ela=""; var ela2 = 0;}
             elements.stateX.innerText = "My Discord Status: "+user.activities[0].state;
-            if(ela){elements.gameX.innerText = ela;elements.gameX.innerHTML = elements.gameX.innerHTML +'<img src="https://cdn.discordapp.com/app-assets/'+user.activities[0].application_id+'/'+user.activities[0].assets.large_image+" >'}
+            if(ela){elements.gameX.innerText = ela;elements.gameX.innerHTML = elements.gameX.innerHTML +'<img src="https://cdn.discordapp.com/app-assets/'+user.activities[0].application_id+'/'+user.activities[0].assets.large_image+'" >'}
             
             elements.avatar.src = `https://cdn.discordapp.com/avatars/938401082105806909/${user.discord_user.avatar}.gif?size=128`;
             elements.status.style.background =
